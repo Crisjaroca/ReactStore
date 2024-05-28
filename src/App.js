@@ -3,6 +3,7 @@ import MenuCategorias from './componentes/MenuCategorias';
 import ListaProductos from './componentes/ListaProductos';
 import DetalleProducto from './componentes/DetalleProducto';
 import CarritoCompras from './componentes/CarritoCompras';
+import { FaShoppingCart } from 'react-icons/fa';
 import './App.css';
 
 const App = () => {
@@ -25,9 +26,14 @@ const App = () => {
     sessionStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
   };
 
+  const handleGoToHome = () => {
+    setCategoriaSeleccionada(null);
+    setProductoSeleccionado(null);
+  };
+
   return (
     <div className="app">
-      <MenuCategorias onSelectCategory={handleSelectCategory} />
+      <MenuCategorias onSelectCategory={handleSelectCategory} onGoToHome={handleGoToHome} />
       {productoSeleccionado ? (
         <DetalleProducto productoId={productoSeleccionado} onAgregarAlCarrito={handleAgregarAlCarrito} />
       ) : (

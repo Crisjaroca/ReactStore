@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../estilos/MenuCategorias.css';
 
-const MenuCategorias = ({ onSelectCategory }) => {
+const MenuCategorias = ({ onSelectCategory, onGoToHome }) => {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products/categories')
-      .then(response => setCategorias(response.data));
+      .then(response => setCategorias(['Inicio', ...response.data]));
   }, []);
 
   return (
@@ -15,7 +15,13 @@ const MenuCategorias = ({ onSelectCategory }) => {
       {categorias.map(categoria => (
         <button 
           key={categoria} 
-          onClick={() => onSelectCategory(categoria)} 
+          onClick={() => {
+            if (categoria === 'Inicio') {
+              onGoToHome();
+            } else {
+              onSelectCategory(categoria);
+            }
+          }} 
           className="menu-categorias__boton"
         >
           {categoria}
