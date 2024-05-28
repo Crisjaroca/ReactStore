@@ -3,6 +3,7 @@ import MenuCategorias from './componentes/MenuCategorias';
 import ListaProductos from './componentes/ListaProductos';
 import DetalleProducto from './componentes/DetalleProducto';
 import CarritoCompras from './componentes/CarritoCompras';
+import Footer from './componentes/Footer';
 import './App.css';
 import axios from 'axios';
 
@@ -82,6 +83,7 @@ const App = () => {
         )
       )}
       <CarritoCompras carrito={carrito} onEliminarDelCarrito={handleEliminarDelCarrito} />
+      <Footer />
     </div>
   );
 };
