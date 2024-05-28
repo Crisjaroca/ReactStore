@@ -1,0 +1,30 @@
+.detalle-producto {
+    text-align: center;
+  }
+  
+  .detalle-producto__imagen {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .detalle-producto__titulo {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .detalle-producto__descripcion {
+    margin-bottom: 10px;
+  }
+  
+  .detalle-producto__precio {
+    font-size: 20px;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  
+  .detalle-producto__boton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

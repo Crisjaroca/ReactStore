@@ -1,0 +1,42 @@
+.carrito-compras {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .carrito-compras__titulo {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .carrito-compras__lista {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .carrito-compras__item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .carrito-compras__imagen {
+    max-width: 60px;
+    margin-right: 10px;
+  }
+  
+  .carrito-compras__detalles {
+    flex-grow: 1;
+  }
+  
+  .carrito-compras__titulo {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .carrito-compras__precio {
+    font-size: 14px;
+    color: #888;
+  }
+  

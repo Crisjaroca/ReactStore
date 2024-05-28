@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import MenuCategorias from './componentes/MenuCategorias';
+import ListaProductos from './componentes/ListaProductos';
+import DetalleProducto from './componentes/DetalleProducto';
+import CarritoCompras from './componentes/CarritoCompras';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
+  const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+  const [carrito, setCarrito] = useState(JSON.parse(sessionStorage.getItem('carrito')) || []);
+
+  const handleSelectCategory = (categoria) => {
+    setCategoriaSeleccionada(categoria);
+    setProductoSeleccionado(null);
+  };
+
+  const handleSelectProduct = (productoId) => {
+    setProductoSeleccionado(productoId);
+  };
+
+  const handleAgregarAlCarrito = (producto) => {
+    const nuevoCarrito = [...carrito, producto];
+    setCarrito(nuevoCarrito);
+    sessionStorage.setItem('carrito', JSON.stringify(nuevoCarrito));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <MenuCategorias onSelectCategory={handleSelectCategory} />
+      {productoSeleccionado ? (
+        <DetalleProducto productoId={productoSeleccionado} onAgregarAlCarrito={handleAgregarAlCarrito} />
+      ) : (
+        categoriaSeleccionada && <ListaProductos categoriaSeleccionada={categoriaSeleccionada} onSelectProduct={handleSelectProduct} />
+      )}
+      <CarritoCompras carrito={carrito} />
     </div>
   );
-}
+};
 
 export default App;

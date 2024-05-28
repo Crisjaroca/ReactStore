@@ -1,0 +1,29 @@
+.lista-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .lista-productos__item {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .lista-productos__imagen {
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .lista-productos__titulo {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .lista-productos__precio {
+    font-size: 16px;
+    color: #888;
+  }
+  
