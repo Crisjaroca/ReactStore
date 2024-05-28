@@ -1,3 +1,4 @@
+// MenuCategorias.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../estilos/MenuCategorias.css';
@@ -7,7 +8,7 @@ const MenuCategorias = ({ onSelectCategory, onGoToHome }) => {
 
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products/categories')
-      .then(response => setCategorias(['Inicio', ...response.data]));
+      .then(response => setCategorias(['New releases', ...response.data]));
   }, []);
 
   return (
@@ -16,7 +17,7 @@ const MenuCategorias = ({ onSelectCategory, onGoToHome }) => {
         <button 
           key={categoria} 
           onClick={() => {
-            if (categoria === 'Inicio') {
+            if (categoria === 'New releases') {
               onGoToHome();
             } else {
               onSelectCategory(categoria);

@@ -1,3 +1,4 @@
+/* CarritoCompras.css */
 .carrito-compras {
   border: 1px solid #ddd;
   padding: 20px;
@@ -46,4 +47,24 @@
 .carrito-compras__precio {
   font-size: 14px;
   color: #888;
+}
+
+.carrito-compras__eliminar {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.carrito-compras__eliminar:hover {
+  background-color: #c0392b;
+}
+
+.carrito-compras__total {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: right;
 }

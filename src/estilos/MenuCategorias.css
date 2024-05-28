@@ -1,13 +1,22 @@
 .menu-categorias {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  .menu-categorias__boton {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.menu-categorias__boton {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-categorias__boton:hover {
+  background-color: #2980b9;
+}

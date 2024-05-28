@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../estilos/CarritoCompras.css';
 
-const CarritoCompras = ({ carrito }) => {
+const CarritoCompras = ({ carrito, onEliminarDelCarrito }) => {
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
 
   const toggleMostrarCarrito = () => {
@@ -24,6 +24,9 @@ const CarritoCompras = ({ carrito }) => {
                 <div className="carrito-compras__detalles">
                   <h3 className="carrito-compras__titulo">{producto.title}</h3>
                   <p className="carrito-compras__precio">${producto.price}</p>
+                  <button onClick={(e) => { e.stopPropagation(); onEliminarDelCarrito(index); }} className="carrito-compras__eliminar">
+                    Eliminar
+                  </button>
                 </div>
               </li>
             ))}
