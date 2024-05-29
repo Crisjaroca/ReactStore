@@ -1,34 +1,34 @@
-// MenuCategorias.js
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import '../estilos/MenuCategorias.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "../estilos/MenuCategorias.css";
 
 const MenuCategorias = ({ onSelectCategory, onGoToHome }) => {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
-    axios.get('https://fakestoreapi.com/products/categories')
-      .then(response => setCategorias(['New releases', ...response.data]));
+    axios
+      .get("https://fakestoreapi.com/products/categories")
+      .then((response) => setCategorias(["New releases", ...response.data]));
   }, []);
 
   return (
-    <div className="menu-categorias">
-      {categorias.map(categoria => (
-        <button 
-          key={categoria} 
+    <section className="menu-categorias">
+      {categorias.map((categoria) => (
+        <button
+          key={categoria}
           onClick={() => {
-            if (categoria === 'New releases') {
+            if (categoria === "New releases") {
               onGoToHome();
             } else {
               onSelectCategory(categoria);
             }
-          }} 
+          }}
           className="menu-categorias__boton"
         >
           {categoria}
         </button>
       ))}
-    </div>
+    </section>
   );
 };
 

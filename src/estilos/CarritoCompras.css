@@ -1,14 +1,12 @@
-/* CarritoCompras.css */
 .carrito-compras {
   border: 1px solid #ddd;
-  padding: 20px;
-  margin-top: 20px;
+  border-radius: 30px;
+  padding: 10px;
+  margin-top: 5px;
   position: fixed;
-  top: 20px;
-  right: 20px;
-  border: 1px solid #ddd;
-  padding: 20px;
-  background-color: white;
+  top: 15px;
+  right: 15px;
+  background-color: rgb(255, 255, 255);
   z-index: 999;
   cursor: pointer;
 }

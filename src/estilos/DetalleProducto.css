@@ -10,7 +10,7 @@
 }
 
 .detalle-producto__imagen {
-  max-width: 100%;
+  max-width: 55%;
   margin-bottom: 20px;
   border-radius: 5px;
 }
